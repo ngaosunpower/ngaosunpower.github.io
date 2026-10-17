@@ -536,25 +536,7 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
 .panel__item b{font-size:15px;white-space:nowrap;color:var(--gold-400)}
 
 /* ============================================================
-   10. COMPARE TABLE
-   ============================================================ */
-.table-shell{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
-.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-table.compare{min-width:820px;font-size:14.2px}
-table.compare th{
-  text-align:left;padding:16px 20px;background:var(--navy-800);color:#fff;
-  font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;
-}
-table.compare th:first-child{background:var(--navy-900)}
-table.compare td{padding:17px 20px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--muted)}
-table.compare tbody tr:last-child td{border-bottom:0}
-table.compare tbody tr:hover{background:var(--bg-alt)}
-table.compare td:first-child{color:var(--text);font-weight:650;white-space:nowrap;background:var(--bg-alt)}
-table.compare td b{color:var(--navy-700)}
-.table-foot{padding:16px 20px;background:var(--bg-alt);border-top:1px solid var(--line);font-size:12.6px;color:var(--muted-2);line-height:1.6}
-
-/* ============================================================
-   10b. CASE STUDY
+   10. CASE STUDY
    ============================================================ */
 .case-gallery{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px}
 .case-fig{margin:0;border-radius:var(--radius);overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
@@ -743,20 +725,6 @@ table.compare td b{color:var(--navy-700)}
   .faq__a-inner{padding:0 32px 22px 2px}
   .footer-logo{width:150px}
 
-  /* compare table: a 4-column grid is unusable at this width — stack each row as a card */
-  .table-shell{background:transparent;border:0;box-shadow:none;border-radius:0}
-  .table-scroll{overflow:visible}
-  table.compare{min-width:0;display:block;font-size:14px}
-  table.compare thead{display:none}
-  table.compare tbody{display:block}
-  table.compare tr{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden;box-shadow:var(--shadow-sm)}
-  table.compare tbody tr:hover{background:#fff}
-  table.compare td{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;align-items:baseline;padding:9px 16px;border-bottom:0;color:var(--muted);background:#fff}
-  table.compare td::before{content:attr(data-label);font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted-2)}
-  table.compare td:first-child{display:block;white-space:normal;font-size:16.5px;font-weight:700;color:var(--text);padding:15px 16px 13px;border-bottom:1px solid var(--line);background:#fff}
-  table.compare td:first-child::before{display:none}
-  table.compare td:last-child{padding-bottom:15px}
-  .table-foot{background:transparent;border-top:0;padding:4px 2px 0;font-size:12.2px}
   .case-fig img{height:238px}
   .case-spec li{grid-template-columns:minmax(0,1fr);gap:4px}
   .case-head h3,.case-split__body h3{font-size:21px}
@@ -809,7 +777,6 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
       <a href="#solutions">What we finance</a>
       <a href="#who">Who we serve</a>
       <a href="#process">How it works</a>
-      <a href="#compare">Compare</a>
       <a href="#case">Case studies</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -827,7 +794,6 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
   <a href="#solutions">What we finance</a>
   <a href="#who">Who we serve</a>
   <a href="#process">How it works</a>
-  <a href="#compare">Compare options</a>
   <a href="#case">Case studies</a>
   <a href="#faq">FAQ</a>
   <a href="#contact">Contact us</a>
@@ -1124,78 +1090,6 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
   </div>
 </section>
 
-<!-- ===================== COMPARE ===================== -->
-<section class="section" id="compare">
-  <div class="wrap">
-    <div class="head-block reveal">
-      <span class="eyebrow">Compare</span>
-      <h2 class="title">Which option fits you?</h2>
-      <p class="lead">
-        All three work on the same instalment principle. The differences are who they suit, how you
-        pay, and what the plan covers.
-      </p>
-    </div>
-
-    <div class="table-shell reveal">
-      <div class="table-scroll">
-        <table class="compare">
-          <thead>
-            <tr>
-              <th scope="col">&nbsp;</th>
-              <th scope="col">E-Motorbike</th>
-              <th scope="col">Electric Vehicle</th>
-              <th scope="col">Rooftop Solar</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Best suited to</td>
-              <td data-label="E-Motorbike">Boda Boda riders</td>
-              <td data-label="Electric Vehicle">Ride-hailing, taxi and fleet operators</td>
-              <td data-label="Rooftop Solar">Schools, hospitals, hotels, factories, retail</td>
-            </tr>
-            <tr>
-              <td>Entry cost</td>
-              <td data-label="E-Motorbike">Low deposit</td>
-              <td data-label="Electric Vehicle">Low deposit</td>
-              <td data-label="Rooftop Solar">No upfront capital outlay</td>
-            </tr>
-            <tr>
-              <td>How you pay</td>
-              <td data-label="E-Motorbike">Daily amount sized to your earnings</td>
-              <td data-label="Electric Vehicle">Instalments structured around daily takings</td>
-              <td data-label="Rooftop Solar">Monthly instalments over the term</td>
-            </tr>
-            <tr>
-              <td>What you own once paid up</td>
-              <td data-label="E-Motorbike"><b>Bike + both batteries</b></td>
-              <td data-label="Electric Vehicle"><b>The vehicle</b></td>
-              <td data-label="Rooftop Solar"><b>The entire installed system</b></td>
-            </tr>
-            <tr>
-              <td>Compliance</td>
-              <td data-label="E-Motorbike">NTSA registration, logbook &amp; inspection arranged</td>
-              <td data-label="Electric Vehicle">Registration handled</td>
-              <td data-label="Rooftop Solar">Regulatory approvals handled</td>
-            </tr>
-            <tr>
-              <td>Ongoing support</td>
-              <td data-label="E-Motorbike">Warranty and servicing</td>
-              <td data-label="Electric Vehicle">Warranty and servicing</td>
-              <td data-label="Rooftop Solar">Design, installation, operation &amp; maintenance</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="table-foot">
-        Terms are set individually after assessment and depend on the asset, the applicant and the
-        agreed payment structure. Contact us and we will put a written proposal together for your
-        situation.
-      </p>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== CASE STUDIES ===================== -->
 <section class="section section--alt" id="case">
   <div class="wrap">
@@ -1467,7 +1361,6 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
           <li><a href="#solutions">E-Motorbike</a></li>
           <li><a href="#solutions">Electric Vehicle</a></li>
           <li><a href="#solutions">Rooftop Solar</a></li>
-          <li><a href="#compare">Compare options</a></li>
         </ul>
       </div>
 
