@@ -9,7 +9,7 @@
    - Anything cross-origin: passed straight through, never cached.
 */
 
-const VERSION = 'v5';
+const VERSION = 'v6';
 const CACHE = 'ngaosun-' + VERSION;
 
 /* Resolved relative to this file, so the worker keeps working whether the
@@ -72,7 +72,9 @@ self.addEventListener('fetch', function (event) {
   /* --- page navigations: network first --- */
   if (req.mode === 'navigate') {
     event.respondWith(
-      fetch(req)
+      /* no-store: the host sends a 10 minute max-age on the HTML, which would
+         otherwise keep serving a page from before the last publish */
+      fetch(req, { cache: 'no-store' })
         .then(function (res) {
           const copy = res.clone();
           caches.open(CACHE).then(function (c) { c.put('./index.html', copy); });
