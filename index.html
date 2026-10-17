@@ -587,6 +587,17 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
    10. CASE STUDY
    ============================================================ */
 .case-gallery{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px}
+/* closing note — the portfolio is larger than the two entries shown */
+.case-more{
+  position:relative;margin-top:46px;padding:21px 26px 21px 30px;border-radius:14px;
+  background:var(--bg-alt);border:1px solid var(--line);
+  font-size:15px;line-height:1.65;color:var(--muted-2);
+}
+.case-more::before{
+  content:"";position:absolute;left:0;top:16px;bottom:16px;width:3px;
+  border-radius:3px;background:var(--gold-400);
+}
+.case-more b{display:block;margin-bottom:3px;color:var(--navy-800);font-weight:700;font-size:15.5px}
 .case-fig{margin:0;border-radius:var(--radius);overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
 .case-fig img{width:100%;height:310px;object-fit:cover;display:block;background:var(--bg-deep)}
 .case-fig figcaption{padding:13px 17px;font-size:12.7px;color:var(--muted);line-height:1.55;border-top:1px solid var(--line);margin-top:auto}
@@ -1244,6 +1255,11 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
         <figcaption>Battery storage installed on site.</figcaption>
       </figure>
     </div>
+
+    <p class="case-more reveal">
+      <b>There is more in service than we can show here.</b>
+      New deliveries are added to this page as they go out — check back for updates.
+    </p>
   </div>
 </section>
 

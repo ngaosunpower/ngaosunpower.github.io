@@ -226,7 +226,9 @@
   "Kikambala Road, Nairobi": "Kikambala Road, Nairobi",
   "Ngaosun Power Limited is a private limited company incorporated in the Republic of Kenya and a subsidiary of Rideence Africa Ltd. Assets are supplied on instalment terms under a written agreement. Title to the asset remains with Ngaosun Power Limited until the agreement is completed and all amounts due have been paid in full, at which point title transfers to the customer. Ngaosun Power Limited is not a bank or a deposit-taking institution and does not accept deposits or savings. All facilities are subject to assessment, asset availability and satisfactory documentation. Nothing on this website constitutes an offer, a quotation or a commitment to finance; deposits, terms and payment amounts are quoted individually and are confirmed only in writing.": "Ngaosun Power Limited 是在肯尼亚共和国注册的私人有限公司，为 Rideence Africa Ltd 的子公司。资产依据书面协议以分期方式提供。在协议履行完毕且全部应付款项付清之前，资产所有权始终归 Ngaosun Power Limited 所有，付清后所有权转移给客户。Ngaosun Power Limited 不是银行，也不是吸收存款的机构，不接受存款或储蓄。所有融资均需通过评估、确认资产可供性并提交合格文件。本网站内容不构成要约、报价或融资承诺；首付、期限和每期金额均逐单报价，且仅在书面文件中确认。",
   "2026": "2026",
-  "Ngaosun Power Limited. All rights reserved.": "Ngaosun Power Limited 版权所有。"
+  "Ngaosun Power Limited. All rights reserved.": "Ngaosun Power Limited 版权所有。",
+  "There is more in service than we can show here.": "在跑的资产不止这些。",
+  "New deliveries are added to this page as they go out — check back for updates.": "新交付的项目会陆续更新到这里，欢迎回来看。",
 };
 
   var SW = {
@@ -443,7 +445,9 @@
   "Kikambala Road, Nairobi": "Kikambala Road, Nairobi",
   "Ngaosun Power Limited is a private limited company incorporated in the Republic of Kenya and a subsidiary of Rideence Africa Ltd. Assets are supplied on instalment terms under a written agreement. Title to the asset remains with Ngaosun Power Limited until the agreement is completed and all amounts due have been paid in full, at which point title transfers to the customer. Ngaosun Power Limited is not a bank or a deposit-taking institution and does not accept deposits or savings. All facilities are subject to assessment, asset availability and satisfactory documentation. Nothing on this website constitutes an offer, a quotation or a commitment to finance; deposits, terms and payment amounts are quoted individually and are confirmed only in writing.": "Ngaosun Power Limited ni kampuni ya kibinafsi iliyosajiliwa katika Jamhuri ya Kenya na ni kampuni tanzu ya Rideence Africa Ltd. Mali hutolewa kwa masharti ya awamu chini ya makubaliano yaliyoandikwa. Umiliki wa mali unabaki kwa Ngaosun Power Limited hadi makubaliano yakamilike na kiasi chote kinachodaiwa kilipwe kikamilifu, ambapo umiliki unahamia kwa mteja. Ngaosun Power Limited si benki wala taasisi inayopokea amana, na haipokei amana wala akiba. Huduma zote zinategemea tathmini, upatikanaji wa mali na nyaraka za kuridhisha. Hakuna chochote kwenye tovuti hii kinachounda ofa, nukuu au ahadi ya ufadhili; amana, muda na kiasi cha malipo hutolewa kwa kila kesi na huthibitishwa kwa maandishi pekee.",
   "2026": "2026",
-  "Ngaosun Power Limited. All rights reserved.": "Ngaosun Power Limited. Haki zote zimehifadhiwa."
+  "Ngaosun Power Limited. All rights reserved.": "Ngaosun Power Limited. Haki zote zimehifadhiwa.",
+  "There is more in service than we can show here.": "Kuna mali nyingi zaidi zinazofanya kazi kuliko tunavyoweza kuonyesha hapa.",
+  "New deliveries are added to this page as they go out — check back for updates.": "Mali mpya zitaongezwa hapa kadri zinavyokabidhiwa — karibu tena kuona masasisho.",
 };
 
   var ATTR = {
