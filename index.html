@@ -303,6 +303,14 @@ table{border-collapse:collapse;width:100%}
 h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
 .lead{font-size:17px;color:var(--muted);max-width:62ch}
 .head-block{max-width:780px;margin-bottom:56px}
+.head-note{
+  display:flex;gap:10px;align-items:flex-start;
+  margin-top:16px;font-size:14.6px;line-height:1.6;color:var(--muted-2);
+}
+.head-note::before{
+  content:"";flex:none;width:14px;height:2px;border-radius:2px;
+  background:var(--gold-500);margin-top:9px;
+}
 
 /* ============================================================
    3. BUTTONS
@@ -977,6 +985,7 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
         Each of these assets generates income or saves cost from the day it is delivered. We finance
         the asset and structure the payments around what it actually earns.
       </p>
+      <p class="head-note">We are also exploring other assets that could be financed the same way.</p>
     </div>
 
     <div class="solutions">
