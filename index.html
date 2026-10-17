@@ -13,6 +13,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta property="og:locale" content="en_KE">
 <link rel="manifest" href="manifest.webmanifest">
+<script src="i18n.js" defer></script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ngaosun Power Limited — Green Energy Assets on Instalment Plans">
 <meta property="og:description" content="Electric motorbikes, electric vehicles and rooftop solar — financed on fixed instalments. Nairobi, Kenya.">
@@ -359,19 +360,44 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
 
 .header-cta{display:flex;align-items:center;gap:12px;flex:none}
 .header-cta .btn{padding:11px 20px;font-size:14px}
+/* language picker — a plain native select keeps it usable on every phone */
+.lang{position:relative;display:inline-flex;align-items:center;flex:none}
+.lang::after{
+  content:"";position:absolute;right:10px;top:50%;width:6px;height:6px;
+  border-right:2px solid var(--navy-700);border-bottom:2px solid var(--navy-700);
+  transform:translateY(-62%) rotate(45deg);pointer-events:none;
+}
+.lang__select{
+  appearance:none;-webkit-appearance:none;-moz-appearance:none;
+  font-family:inherit;font-size:13px;font-weight:650;line-height:1.2;
+  color:var(--navy-800);background:#fff;border:1px solid var(--line-strong);
+  border-radius:9px;padding:9px 26px 9px 11px;height:38px;cursor:pointer;
+  transition:border-color .18s,box-shadow .18s;
+}
+.lang__select:hover{border-color:var(--blue-600)}
+.lang__select:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px}
+.lang__select option{color:var(--navy-800);background:#fff}
 
 .burger{
-  display:none;width:42px;height:42px;border-radius:10px;
-  border:1px solid rgba(255,255,255,.24);place-items:center;flex:none;
+  display:none;position:relative;width:42px;height:42px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.24);flex:none;
   transition:border-color .25s,background .25s;
 }
 .is-stuck .burger{border-color:var(--line-strong)}
-.burger span{display:block;width:18px;height:2px;background:#fff;border-radius:2px;transition:transform .25s,opacity .2s,background .25s}
-.burger span+span{margin-top:4px}
+/* the three bars are stacked around the button centre, so the open state
+   collapses them onto one point and the cross is a true X at every size */
+.burger span{
+  position:absolute;left:50%;top:50%;display:block;width:18px;height:2px;
+  background:#fff;border-radius:2px;
+  transition:transform .25s,opacity .2s,background .25s;
+}
+.burger span:nth-child(1){transform:translate(-50%,-50%) translateY(-6px)}
+.burger span:nth-child(2){transform:translate(-50%,-50%)}
+.burger span:nth-child(3){transform:translate(-50%,-50%) translateY(6px)}
 .is-stuck .burger span{background:var(--navy-800)}
-.burger.is-open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger.is-open span:nth-child(1){transform:translate(-50%,-50%) rotate(45deg)}
 .burger.is-open span:nth-child(2){opacity:0}
-.burger.is-open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.burger.is-open span:nth-child(3){transform:translate(-50%,-50%) rotate(-45deg)}
 
 .mobile-menu{
   position:fixed;top:var(--nav-h);left:0;right:0;z-index:99;
@@ -382,6 +408,9 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
 .mobile-menu.is-open{display:block}
 .mobile-menu a{display:block;padding:14px 4px;font-size:16px;font-weight:600;color:var(--navy-800);border-bottom:1px solid var(--line)}
 .mobile-menu .btn{margin-top:20px}
+/* the header switcher does not fit beside the logo on a phone, so the menu carries one */
+.menu-lang{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 4px 4px}
+.menu-lang>span:first-child{font-size:14px;font-weight:650;color:var(--muted)}
 
 /* ============================================================
    5. HERO
@@ -695,7 +724,7 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
    ============================================================ */
 @media (max-width:1180px){
   .nav{display:none}
-  .burger{display:grid}
+  .burger{display:block}
   .hero__grid{gap:44px}
   .process{grid-template-columns:repeat(3,minmax(0,1fr));gap:38px 0}
   .step:nth-child(4){padding-left:0}
@@ -726,6 +755,7 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
   .wrap{padding:0 18px}
   /* header CTA would push the burger past the viewport edge — the menu CTA covers it */
   .header-cta .btn{display:none}
+  .header-cta .lang{display:none}
   .section{padding:62px 0}
   .head-block{margin-bottom:40px}
   .grid--3,.grid--2{grid-template-columns:minmax(0,1fr)}
@@ -805,6 +835,13 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
     </nav>
 
     <div class="header-cta">
+      <span class="lang">
+        <select id="langSelect" class="lang__select" aria-label="Language">
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+          <option value="sw">Kiswahili</option>
+        </select>
+      </span>
       <a class="btn btn--gold" href="#apply">Apply now</a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
@@ -820,6 +857,16 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
   <a href="#case">Case studies</a>
   <a href="#faq">FAQ</a>
   <a href="#contact">Contact us</a>
+  <div class="menu-lang">
+    <span>Language</span>
+    <span class="lang">
+      <select class="lang__select" aria-label="Language">
+        <option value="en">English</option>
+        <option value="zh">中文</option>
+        <option value="sw">Kiswahili</option>
+      </select>
+    </span>
+  </div>
   <a class="btn btn--gold btn--block" href="#apply">Apply now</a>
 </div>
 
@@ -1461,7 +1508,7 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
     burger.classList.toggle('is-open', open);
     menu.classList.toggle('is-open', open);
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    burger.setAttribute('aria-label', window.NGP_T ? window.NGP_T(open ? 'Close menu' : 'Open menu') : (open ? 'Close menu' : 'Open menu'));
   };
   burger.addEventListener('click', function () { setMenu(!menu.classList.contains('is-open')); });
   menu.querySelectorAll('a').forEach(function (a) {
@@ -1556,7 +1603,8 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
 
     if (firstBad) {
       status.className = 'form__status is-err';
-      status.textContent = 'Please complete the highlighted fields before submitting.';
+      status.textContent = window.NGP_MSG ? window.NGP_MSG.invalid()
+        : 'Please complete the highlighted fields before submitting.';
       if (firstBad.focus) firstBad.focus();
       return;
     }
@@ -1584,11 +1632,12 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
     ].join('\n');
 
     status.className = 'form__status is-ok';
-    status.innerHTML =
+    var ref = 'NPL-' + Date.now().toString().slice(-6);
+    status.innerHTML = window.NGP_MSG ? window.NGP_MSG.success(p.name.split(' ')[0], ref) :
       'Thank you, ' + p.name.split(' ')[0] + '. Your application has been prepared. ' +
       'Opening your email client to send it to <strong>ngaosun2026@gmail.com</strong> — ' +
       'if nothing opens, please email us directly and quote the reference below.<br>' +
-      '<span style="opacity:.75">Reference: NPL-' + Date.now().toString().slice(-6) + '</span>';
+      '<span style="opacity:.75">Reference: ' + ref + '</span>';
 
     window.location.href = 'mailto:ngaosun2026@gmail.com' +
       '?subject=' + encodeURIComponent('Instalment plan enquiry — ' + p.name) +

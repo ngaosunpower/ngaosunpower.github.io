@@ -9,7 +9,7 @@
    - Anything cross-origin: passed straight through, never cached.
 */
 
-const VERSION = 'v3';
+const VERSION = 'v5';
 const CACHE = 'ngaosun-' + VERSION;
 
 /* Resolved relative to this file, so the worker keeps working whether the
@@ -18,6 +18,7 @@ const PRECACHE = [
   './',
   './index.html',
   './manifest.webmanifest',
+  './i18n.js',
   './assets/icons/icon-192.png',
   './assets/icons/icon-512.png',
   './assets/icons/icon-maskable-512.png',
