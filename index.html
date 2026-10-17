@@ -482,6 +482,25 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
 .spec{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
 .spec span{font-size:11.5px;font-weight:650;color:var(--navy-700);background:var(--bg-alt);border:1px solid var(--line);padding:4px 9px;border-radius:6px}
 
+/* solutions: one featured card with product photography, two gateways beside it */
+.solutions{display:grid;gap:22px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.solutions>*{min-width:0}
+.card__model{
+  display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--blue-600);vertical-align:middle;margin-left:8px;
+}
+.card__note{margin-top:16px;font-size:13.2px;color:var(--muted-2);line-height:1.6}
+.card--feature{
+  grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);
+  padding:0;overflow:hidden;align-items:stretch;
+}
+.feature__media{margin:0;background:var(--bg-alt);display:flex;overflow:hidden}
+.feature__media img{width:100%;height:100%;object-fit:contain;display:block}
+.feature__body{padding:32px 30px;display:flex;flex-direction:column}
+.feature__body .card__foot{margin-top:auto;padding-top:24px}
+/* these block buttons carry longer labels than the base .btn allows for */
+.card__foot .btn--block{white-space:normal;text-align:center;line-height:1.35}
+
 /* who we serve */
 .who{display:flex;align-items:flex-start;gap:16px;padding:24px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);transition:transform .2s,box-shadow .2s,border-color .2s}
 .who:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);border-color:var(--line-strong)}
@@ -699,6 +718,9 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
   .case-split{grid-template-columns:minmax(0,1fr);gap:28px}
   .case-split .case-fig img{height:400px}
   .case-divider{margin:46px 0}
+  .solutions{grid-template-columns:minmax(0,1fr)}
+  .card--feature{grid-template-columns:minmax(0,1fr)}
+  .feature__media{aspect-ratio:1100/888}
 }
 @media (max-width:680px){
   .wrap{padding:0 18px}
@@ -707,6 +729,7 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
   .section{padding:62px 0}
   .head-block{margin-bottom:40px}
   .grid--3,.grid--2{grid-template-columns:minmax(0,1fr)}
+  .feature__body{padding:26px 22px}
   .checks{grid-template-columns:minmax(0,1fr)}
   .form__row{grid-template-columns:minmax(0,1fr);gap:0}
   .form{padding:26px 20px}
@@ -900,23 +923,29 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
       </p>
     </div>
 
-    <div class="grid grid--3">
-      <article class="card reveal">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5h4l3-8h-2.5M12.5 9.5h3l3 8M9.5 9.5h6"/></svg></div>
-        <span class="card__tag">For Boda Boda riders</span>
-        <h3>E-Motorbike</h3>
-        <p>An electric motorbike on a fixed instalment plan. Pay a daily amount sized to what you
-           actually earn, and the bike — and both batteries — are titled to you when the plan is
-           paid up.</p>
-        <div class="spec">
-          <span>200 km range</span><span>72V 4000W motor</span><span>250 kg payload</span><span>100 km/h top speed</span>
+    <div class="solutions">
+      <article class="card card--feature reveal">
+        <figure class="feature__media">
+          <img src="assets/x1-motorbike.jpg" width="1100" height="888" loading="lazy" decoding="async"
+               alt="The HANLIN X1 electric motorbike, side view.">
+        </figure>
+        <div class="feature__body">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5h4l3-8h-2.5M12.5 9.5h3l3 8M9.5 9.5h6"/></svg></div>
+          <span class="card__tag">For Boda Boda riders</span>
+          <h3>E-Motorbike <span class="card__model">HANLIN X1</span></h3>
+          <p>An electric motorbike on a fixed instalment plan. Pay a daily amount sized to what you
+             actually earn, and the bike — and both batteries — are titled to you when the plan is
+             paid up.</p>
+          <div class="spec">
+            <span>200 km range</span><span>72V 4000W motor</span><span>250 kg payload</span><span>100 km/h top speed</span>
+          </div>
+          <ul class="card__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Daily amount sized to what you actually earn</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Frame <b>and both batteries</b> titled to you at the end</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Charging costs a fraction of petrol</li>
+          </ul>
+          <div class="card__foot"><a class="btn btn--outline btn--block" href="#apply">Enquire about this</a></div>
         </div>
-        <ul class="card__list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Daily amount sized to what you actually earn</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Frame <b>and both batteries</b> titled to you at the end</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Charging costs a fraction of petrol</li>
-        </ul>
-        <div class="card__foot"><a class="btn btn--outline btn--block" href="#apply">Enquire about this</a></div>
       </article>
 
       <article class="card reveal">
@@ -933,7 +962,13 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Tenor structured around daily earnings</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Title transfers to you on final payment</li>
         </ul>
-        <div class="card__foot"><a class="btn btn--outline btn--block" href="#apply">Enquire about this</a></div>
+        <p class="card__note">The vehicles are assembled and supplied by our parent company, Rideence Africa.</p>
+        <div class="card__foot">
+          <a class="btn btn--navy btn--block" href="https://rideence.com" target="_blank" rel="noopener noreferrer">
+            See the vehicles on rideence.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-8.5 8.5M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>
+          </a>
+        </div>
       </article>
 
       <article class="card reveal">
@@ -951,7 +986,13 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Reduces your dependence on grid electricity</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>We handle design, installation and maintenance</li>
         </ul>
-        <div class="card__foot"><a class="btn btn--outline btn--block" href="#apply">Enquire about this</a></div>
+        <p class="card__note">Delivered at Spring Garden Apartments, Nairobi — 106 kWp of solar with battery storage.</p>
+        <div class="card__foot">
+          <a class="btn btn--outline btn--block" href="#case">
+            See the Spring Garden project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
       </article>
     </div>
   </div>

@@ -9,7 +9,7 @@
    - Anything cross-origin: passed straight through, never cached.
 */
 
-const VERSION = 'v2';
+const VERSION = 'v3';
 const CACHE = 'ngaosun-' + VERSION;
 
 /* Resolved relative to this file, so the worker keeps working whether the
@@ -24,6 +24,7 @@ const PRECACHE = [
   './assets/icons/apple-touch-icon.png',
   './assets/icons/favicon-64.png',
   './assets/logo-mark.png',
+  './assets/x1-motorbike.jpg',
   './assets/case-emotorbike-handover.jpg'
 ];
 
