@@ -1,0 +1,13 @@
+# robots.txt — Ngaosun Power Limited
+
+User-agent: *
+Allow: /
+
+# No admin, staging or private areas exist on this site.
+# Everything published here is meant to be indexed.
+#
+# No Sitemap: line is declared on purpose. This page is served from a
+# publishing address that changes when the site is republished, and a sitemap
+# pointing at an old address is worse than no sitemap at all. Google discovers
+# the page through links; add a Sitemap: line here once the site sits on a
+# permanent domain.

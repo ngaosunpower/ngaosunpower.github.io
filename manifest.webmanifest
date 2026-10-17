@@ -1,0 +1,65 @@
+{
+  "name": "Ngaosun Power Limited",
+  "short_name": "Ngaosun Power",
+  "description": "Instalment finance for electric motorbikes, electric vehicles and rooftop solar across Kenya. Apply from your phone and track your enquiry.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "any",
+  "background_color": "#FFFFFF",
+  "theme_color": "#072D6B",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["business", "finance", "shopping"],
+  "icons": [
+    {
+      "src": "assets/icons/favicon-64.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Apply now",
+      "short_name": "Apply",
+      "description": "Send a finance enquiry",
+      "url": "./#apply",
+      "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "E-Motorbike",
+      "short_name": "Motorbike",
+      "description": "Instalment plan for electric motorbikes for riders",
+      "url": "./#solutions",
+      "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Rooftop Solar",
+      "short_name": "Solar",
+      "description": "Instalment plan for rooftop solar for businesses",
+      "url": "./#case",
+      "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}
