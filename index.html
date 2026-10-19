@@ -526,6 +526,10 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
   display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
   color:var(--blue-600);vertical-align:middle;margin-left:8px;
 }
+.card__slogan{
+  margin:0 0 8px;font-size:14.2px;font-weight:700;color:var(--navy-800);letter-spacing:.01em;
+}
+.card h3 + .card__slogan{margin-top:-4px}
 .card__note{margin-top:16px;font-size:13.2px;color:var(--muted-2);line-height:1.6}
 .card--feature{
   grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);
@@ -673,7 +677,7 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
 .form__row>*{min-width:0}
 .field{margin-bottom:18px}
 .field label{display:block;font-size:13px;font-weight:650;margin-bottom:7px;color:var(--navy-800)}
-.field label .req{color:#C0392B}
+.field label .ast{color:#C0392B}
 .field input,.field select,.field textarea{
   width:100%;padding:12px 14px;border:1px solid var(--line-strong);border-radius:9px;
   font:inherit;font-size:14.8px;color:var(--text);background:#fff;
@@ -686,6 +690,7 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
 .field__err{display:none;margin-top:6px;font-size:12.4px;color:#C0392B;font-weight:550}
 .field.has-error .field__err{display:block}
 .form__consent{display:flex;gap:10px;align-items:flex-start;font-size:12.8px;color:var(--muted);line-height:1.6;margin:6px 0 22px}
+.form__consent .ast{color:#C0392B}
 .form__consent input{width:auto;margin-top:3px;flex:none;accent-color:var(--navy-700)}
 .form__status{display:none;margin-top:18px;padding:14px 16px;border-radius:10px;font-size:14px;line-height:1.6}
 .form__status.is-ok{display:block;background:var(--green-100);border:1px solid rgba(74,158,81,.34);color:#2C6B32}
@@ -980,12 +985,13 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
   <div class="wrap">
     <div class="head-block reveal">
       <span class="eyebrow">What we finance</span>
-      <h2 class="title">Assets that earn. You&nbsp;pay&nbsp;as&nbsp;you&nbsp;earn.</h2>
+      <h2 class="title">Assets that generate income. Payments that&nbsp;fit.</h2>
       <p class="lead">
-        Every asset we finance generates income or saves cost from the day it is delivered. We
-        structure the payments around what it brings in.
+        We finance income-generating and cost-saving assets, with instalments structured around the
+        asset's cost, deposit, repayment term, and expected earnings. This helps align repayments
+        with the income the asset is projected to generate.
       </p>
-      <p class="head-note">We are also exploring other assets that could be financed the same way.</p>
+      <p class="head-note"><span></span>We continue to explore additional assets that fit our flexible financing model.</p>
     </div>
 
     <div class="solutions">
@@ -997,17 +1003,17 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
         <div class="feature__body">
           <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5h4l3-8h-2.5M12.5 9.5h3l3 8M9.5 9.5h6"/></svg></div>
           <span class="card__tag">For Boda Boda riders</span>
-          <h3>E-Motorbike <span class="card__model">HANLIN X1</span></h3>
-          <p>An electric motorbike on a fixed instalment plan. Pay a daily amount sized to what you
-             actually earn, and the bike — and both batteries — are titled to you when the plan is
-             paid up.</p>
+          <h3>HANLIN X1 Electric Motorbike</h3>
+          <p class="card__slogan">Ride more. Spend less. Own your bike.</p>
+          <p>Switch to electric with a fixed instalment plan designed around your earning potential.</p>
           <div class="spec">
-            <span>200 km range</span><span>72V 4000W motor</span><span>250 kg payload</span><span>100 km/h top speed</span>
+            <span>Up to 200 km range</span><span>72V 4,000W motor</span><span>250 kg payload</span><span>100 km/h top speed</span>
           </div>
           <ul class="card__list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Daily amount sized to what you actually earn</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Frame <b>and both batteries</b> titled to you at the end</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Charging costs a fraction of petrol</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Keep more of your earnings with lower charging costs compared with petrol</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Pay as you work, with daily instalments tailored to your financing plan</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Own the complete unit — motorbike and both batteries — after full repayment</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Work towards financial independence in an asset you can ultimately own</li>
           </ul>
           <div class="card__foot"><a class="btn btn--outline btn--block" href="#apply">Enquire about this</a></div>
         </div>
@@ -1015,22 +1021,22 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
 
       <article class="card reveal">
         <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M5 17a2 2 0 01-2-2V9a2 2 0 012-2h9v8M16 9l4 3v5h-4M7.5 20a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM17.5 20a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg></div>
-        <span class="card__tag">For ride-hailing &amp; fleets</span>
-        <h3>Electric Vehicle</h3>
-        <p>A four-wheel electric vehicle on a fixed instalment plan, for drivers and operators who
-           want to cut their fuel bill without finding the full purchase price up front.</p>
+        <span class="card__tag">For ride-hailing drivers &amp; fleets</span>
+        <h3>Electric Vehicles</h3>
+        <p class="card__slogan">Drive more. Spend less. Earn more.</p>
+        <p>Get an electric vehicle with a low deposit and fixed instalments tailored to your earning potential.</p>
         <div class="spec">
-          <span>205 km range</span><span>Long tenor</span><span>Low deposit</span>
+          <span>205 km range</span><span>Lower charging costs</span><span>Flexible repayment terms</span><span>Ownership upon full repayment</span>
         </div>
         <ul class="card__list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Fuel replaced by far cheaper charging</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Tenor structured around daily earnings</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Title transfers to you on final payment</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Lower charging costs than petrol alternatives</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Repayment terms structured around your earnings</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Ownership of the vehicle upon full repayment</li>
         </ul>
-        <p class="card__note">The vehicles are supplied by our parent company, Rideence Africa.</p>
+        <p class="card__note">Supplied by Rideence Africa, our parent company.</p>
         <div class="card__foot">
           <a class="btn btn--navy btn--block" href="https://rideence.com" target="_blank" rel="noopener noreferrer">
-            See the vehicles on rideence.com
+            Explore vehicles on rideence.com
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-8.5 8.5M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>
           </a>
         </div>
@@ -1038,27 +1044,36 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
 
       <article class="card reveal">
         <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1H4a1 1 0 01-1-1v-9z"/><path d="M8 21v-6h8v6M9 11h.01M12 11h.01M15 11h.01"/></svg></div>
-        <span class="card__tag">For institutions</span>
+        <span class="card__tag">For businesses &amp; institutions</span>
         <h3>Rooftop Solar</h3>
-        <p>We design, finance, install, commission and maintain a rooftop solar and storage system at
-           your premises. You pay monthly instead of a large capital outlay, and the system is titled
-           to you once the plan is paid up.</p>
+        <p class="card__slogan">Lower energy costs. Improve energy reliability. Preserve capital.</p>
+        <p>We design, finance, install, commission, and maintain rooftop solar and battery storage systems, helping institutions reduce reliance on grid electricity without a large upfront investment. Ownership transfers upon full repayment.</p>
         <div class="spec">
-          <span>Solar PV</span><span>Battery storage</span><span>Monitoring</span>
+          <span>Solar PV and battery storage</span><span>Reduced electricity costs</span><span>Predictable monthly instalments</span><span>End-to-end delivery and maintenance</span>
         </div>
         <ul class="card__list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No upfront capital expenditure</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Reduces your dependence on grid electricity</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>We handle design, installation and maintenance</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Solar PV and battery storage, designed for your site</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Reduced electricity costs and grid dependence</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Predictable monthly instalments — no large upfront capital</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>End-to-end delivery and ongoing maintenance</li>
         </ul>
-        <p class="card__note">Delivered at Spring Garden Apartments, Nairobi — rooftop solar with battery storage.</p>
+        <p class="card__note">Featured project: Spring Garden Apartments, Nairobi.</p>
         <div class="card__foot">
           <a class="btn btn--outline btn--block" href="#case">
-            See the Spring Garden project
+            View the Spring Garden project
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
       </article>
+    </div>
+
+    <div class="head-block reveal" style="margin-top:44px">
+      <h3 style="font-size:20px;margin-bottom:10px">Flexible Financing. Clear Terms. Lasting Value.</h3>
+      <p class="lead" style="font-size:15px">
+        At Ngaosun Power, our goal is to make electric mobility more accessible by aligning financing
+        with how our customers earn. We are committed to transparent agreements, reliable support,
+        and helping our customers work towards owning a valuable asset.
+      </p>
     </div>
   </div>
 </section>
@@ -1181,16 +1196,16 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
       </div>
 
       <aside class="panel reveal">
-        <h3>Flexible financing. Clear terms. Lasting value.</h3>
-        <p>Our goal is to make electric mobility more accessible by aligning financing with how you earn. We are committed to transparent agreements, reliable support, and helping you work towards owning a valuable asset.</p>
+        <h3>How Our Instalment Plan Works</h3>
+        <p>The same flexible structure applies to every asset we finance.</p>
         <div class="panel__list">
-          <div class="panel__item"><span>Entry cost</span><b>Low deposit</b></div>
-          <div class="panel__item"><span>Payment frequency</span><b>Daily or monthly</b></div>
-          <div class="panel__item"><span>Term</span><b>Structured to the asset</b></div>
-          <div class="panel__item"><span>During the plan</span><b>Ngaosun holds title</b></div>
-          <div class="panel__item"><span>On final payment</span><b>Title transfers to you</b></div>
+          <div class="panel__item"><span>Entry Cost</span><b>Low deposit</b></div>
+          <div class="panel__item"><span>Payment Frequency</span><b>Daily or monthly</b></div>
+          <div class="panel__item"><span>Repayment Term</span><b>Tailored to the asset</b></div>
+          <div class="panel__item"><span>During the Plan</span><b>Ngaosun retains ownership</b></div>
+          <div class="panel__item"><span>Final Payment</span><b>Ownership transfers to you</b></div>
           <div class="panel__item"><span>Compliance</span><b>Arranged by us</b></div>
-          <div class="panel__item"><span>Support</span><b>Nairobi-based</b></div>
+          <div class="panel__item"><span>Customer Support</span><b>Provided by our Nairobi team</b></div>
         </div>
       </aside>
     </div>
@@ -1273,7 +1288,7 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
           <span class="faq__icon" aria-hidden="true"></span>
         </button>
         <div class="faq__a"><div class="faq__a-inner">
-          <p>We finance income-generating assets: electric motorbikes for riders, electric vehicles for drivers and fleet operators, and rooftop solar for businesses and institutions. All are offered on a fixed instalment plan.</p>
+          <p>Ngaosun Power provides financing for income-generating assets, including electric motorbikes, electric vehicles, and rooftop solar systems for businesses and institutions, through structured, fixed-instalment plans.</p>
         </div></div>
       </div>
 
@@ -1283,8 +1298,7 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
           <span class="faq__icon" aria-hidden="true"></span>
         </button>
         <div class="faq__a"><div class="faq__a-inner">
-          <p>It depends on the asset and on your own situation, so we quote each case individually rather than publishing a single figure that would not fit everyone.</p>
-          <p>Send us an enquiry with the asset you are interested in and roughly what you earn, and we will come back with a written plan showing the deposit, the term and the payment amount. The more we know about how you will use the asset, the more accurate that plan will be.</p>
+          <p>The deposit and instalments depend on the asset and your circumstances. Contact us with your preferred asset and estimated earnings for a tailored financing plan outlining the deposit, repayment period, and instalment amount.</p>
         </div></div>
       </div>
 
@@ -1294,8 +1308,8 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
           <span class="faq__icon" aria-hidden="true"></span>
         </button>
         <div class="faq__a"><div class="faq__a-inner">
-          <p>For an individual: your Kenyan National ID, a valid KRA PIN certificate, a valid driving licence (Class A2 for a motorbike, Class B for a vehicle), and three months of M-Pesa or bank statements. A good conduct certificate is also requested.</p>
-          <p>For a business or institution we assess the entity instead — talk to us and we will confirm the exact list.</p>
+          <p><b>Individuals:</b> National ID, KRA PIN certificate, valid driving licence (Class A2 for a motorbike, Class B for a vehicle), three months of M-Pesa or bank statements, and a Certificate of Good Conduct.</p>
+          <p><b>Businesses and institutions:</b> Requirements vary depending on the entity. Contact us for the specific documentation required.</p>
         </div></div>
       </div>
 
@@ -1305,7 +1319,7 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
           <span class="faq__icon" aria-hidden="true"></span>
         </button>
         <div class="faq__a"><div class="faq__a-inner">
-          <p>The plan covers the complete unit. When it is fully paid, title to the frame <b>and both batteries</b> transfers to you. This is deliberately different from rental models where you end up with a vehicle but no ownership of its batteries.</p>
+          <p>The instalment plan covers the complete unit. Upon full payment, ownership of the motorbike and both batteries transfers to you, unlike rental models where battery ownership may remain with the provider.</p>
         </div></div>
       </div>
 
@@ -1315,7 +1329,7 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
           <span class="faq__icon" aria-hidden="true"></span>
         </button>
         <div class="faq__a"><div class="faq__a-inner">
-          <p>Once we have a complete set of documents, we come back with a written offer in no more than 2 days. The most common cause of delay is an incomplete application, so send everything at once and we will tell you immediately if anything is missing.</p>
+          <p>We provide a written offer within two days of receiving all required documents. To avoid delays, ensure your application is complete. We will promptly notify you if any documents are missing.</p>
         </div></div>
       </div>
 
@@ -1384,12 +1398,12 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
       <form class="form reveal" id="enquiryForm" novalidate>
         <div class="form__row">
           <div class="field">
-            <label for="f-name">Full name <span class="req">*</span></label>
+            <label for="f-name">Full name <span class="ast">*</span></label>
             <input type="text" id="f-name" name="name" placeholder="Your name" autocomplete="name" required>
             <span class="field__err">Please enter your full name.</span>
           </div>
           <div class="field">
-            <label for="f-phone">Phone <span class="req">*</span></label>
+            <label for="f-phone">Phone <span class="ast">*</span></label>
             <input type="tel" id="f-phone" name="phone" placeholder="+254 7XX XXX XXX" autocomplete="tel" required>
             <span class="field__err">Please enter a contact number.</span>
           </div>
@@ -1403,7 +1417,7 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
 
         <div class="form__row">
           <div class="field">
-            <label for="f-asset">What are you interested in? <span class="req">*</span></label>
+            <label for="f-asset">What are you interested in? <span class="ast">*</span></label>
             <select id="f-asset" name="asset" required>
               <option value="">Select an option</option>
               <option>E-Motorbike (instalment plan)</option>
@@ -1414,7 +1428,7 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
             <span class="field__err">Please choose what you are interested in.</span>
           </div>
           <div class="field">
-            <label for="f-profile">I am applying as <span class="req">*</span></label>
+            <label for="f-profile">I am applying as <span class="ast">*</span></label>
             <select id="f-profile" name="profile" required>
               <option value="">Select an option</option>
               <option>Boda Boda rider</option>
@@ -1428,13 +1442,18 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
         </div>
 
         <div class="field">
+          <label for="f-ref">Who referred you to us?</label>
+          <input type="text" id="f-ref" name="referrer" placeholder="Name and contact person who referred you, if any.">
+        </div>
+
+        <div class="field">
           <label for="f-msg">Anything else we should know?</label>
           <textarea id="f-msg" name="message" placeholder="Where you are based, what you earn in a typical week, how you plan to use the asset — anything that helps us put a plan together."></textarea>
         </div>
 
         <label class="form__consent">
           <input type="checkbox" id="f-consent" required>
-          <span>I consent to Ngaosun Power Limited processing the information above so it can respond to this enquiry. <span class="req">*</span></span>
+          <span>I consent to Ngaosun Power Limited processing the information above so it can respond to this enquiry. <span class="ast">*</span></span>
         </label>
 
         <button type="submit" class="btn btn--navy btn--block">
@@ -1635,6 +1654,7 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
       email: email.value.trim(),
       asset: document.getElementById('f-asset').value,
       profile: document.getElementById('f-profile').value,
+      referrer: document.getElementById('f-ref').value.trim(),
       message: document.getElementById('f-msg').value.trim()
     };
 
@@ -1646,6 +1666,7 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
       'Email: ' + (p.email || '(not provided)'),
       'Interested in: ' + p.asset,
       'Applying as: ' + p.profile,
+      'Referred by: ' + (p.referrer || '(not provided)'),
       '',
       'Details:',
       p.message || '(none provided)'
