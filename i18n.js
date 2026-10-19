@@ -206,6 +206,10 @@
   "Office hours": "办公时间",
   "Monday – Friday, 08:00 – 17:00 EAT": "周一至周五 08:00–17:00（东非时间）",
   "Saturday, 09:00 – 13:00 EAT": "周六 09:00–13:00（东非时间）",
+  "Referrer code": "推荐人编码",
+  "If an agent or a friend introduced you, they will give you a code such as NGP-AGT-001. Enter it in the form so the credit goes to them.": "如果是代理人或朋友介绍您来的，他们会给您一个编码，例如 NGP-AGT-001。请在表单中填写，以便将业绩记在他们名下。",
+  "Instalment plan application": "分期方案申请表",
+  "Open in a new tab": "在新标签页打开",
   "Full name": "姓名",
   "Please enter your full name.": "请填写您的姓名。",
   "Phone": "电话",
@@ -440,6 +444,10 @@
   "Office hours": "Saa za ofisi",
   "Monday – Friday, 08:00 – 17:00 EAT": "Jumatatu – Ijumaa, 08:00 – 17:00 EAT",
   "Saturday, 09:00 – 13:00 EAT": "Jumamosi, 09:00 – 13:00 EAT",
+  "Referrer code": "Msimbo wa mleta",
+  "If an agent or a friend introduced you, they will give you a code such as NGP-AGT-001. Enter it in the form so the credit goes to them.": "Ikiwa wakala au rafiki alikuletea, atakupa msimbo kama NGP-AGT-001. Uweke kwenye fomu ili sifa iende kwake.",
+  "Instalment plan application": "Maombi ya mpango wa malipo kwa awamu",
+  "Open in a new tab": "Fungua kwenye kichupo kipya",
   "Full name": "Jina kamili",
   "Please enter your full name.": "Tafadhali weka jina lako kamili.",
   "Phone": "Simu",
@@ -494,6 +502,7 @@
     "Battery storage installed on site": "现场安装的储能电池",
     "Ngaosun Power Limited — Rooftop Solar, EV and Motorbike": "Ngaosun Power Limited — 屋顶光伏、电动汽车与电动摩托车",
     "Your name": "您的姓名",
+    "Ngaosun Power — instalment plan application form": "Ngaosun Power — 分期方案申请表",
     "Name and contact person who referred you, if any.": "如有推荐人，请填写其姓名和联系方式。",
     "Where you are based, what you earn in a typical week, how you plan to use the asset — anything that helps us put a plan together.": "您所在的城市、每周大致收入、打算怎么使用这台资产——任何有助于我们设计方案的信息。"
   },
@@ -511,6 +520,7 @@
     "Battery storage installed on site": "Hifadhi ya betri iliyosimikwa eneo la mradi",
     "Ngaosun Power Limited — Rooftop Solar, EV and Motorbike": "Ngaosun Power Limited — Nishati ya jua, gari la umeme na pikipiki",
     "Your name": "Jina lako",
+    "Ngaosun Power — instalment plan application form": "Ngaosun Power — fomu ya maombi ya mpango wa awamu",
     "Name and contact person who referred you, if any.": "Kama yupo, jina na mawasiliano ya mtu aliyekufikisha kwetu.",
     "Where you are based, what you earn in a typical week, how you plan to use the asset — anything that helps us put a plan together.": "Unapoishi, unachopata kwa wiki kwa kawaida, jinsi unavyokusudia kutumia mali — chochote kinachotusaidia kupanga mpango."
   }

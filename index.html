@@ -663,8 +663,8 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
 /* ============================================================
    13. CONTACT
    ============================================================ */
-.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:56px;align-items:start}
-.contact-info{display:flex;flex-direction:column;gap:26px}
+.contact-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.35fr);gap:56px;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:26px;position:sticky;top:96px}
 .ci{display:flex;gap:15px;align-items:flex-start}
 .ci__icon{width:40px;height:40px;border-radius:11px;background:var(--bg-deep);border:1px solid var(--line);display:grid;place-items:center;flex:none}
 .ci__icon svg{width:18px;height:18px;color:var(--blue-600)}
@@ -672,26 +672,20 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
 .ci p,.ci a{font-size:15.4px;color:var(--text);line-height:1.6}
 .ci a:hover{color:var(--blue-600);text-decoration:underline}
 
+/* embedded application form */
 .form{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow-md)}
-.form__row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.form__row>*{min-width:0}
-.field{margin-bottom:18px}
-.field label{display:block;font-size:13px;font-weight:650;margin-bottom:7px;color:var(--navy-800)}
-.field label .ast{color:#C0392B}
-.field input,.field select,.field textarea{
-  width:100%;padding:12px 14px;border:1px solid var(--line-strong);border-radius:9px;
-  font:inherit;font-size:14.8px;color:var(--text);background:#fff;
-  transition:border-color .18s,box-shadow .18s;
-}
-.field textarea{resize:vertical;min-height:110px}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue-600);box-shadow:0 0 0 3px rgba(7,91,169,.13)}
-.field input::placeholder,.field textarea::placeholder{color:var(--muted-2)}
-.field.has-error input,.field.has-error select,.field.has-error textarea{border-color:#C0392B;box-shadow:0 0 0 3px rgba(192,57,43,.1)}
-.field__err{display:none;margin-top:6px;font-size:12.4px;color:#C0392B;font-weight:550}
-.field.has-error .field__err{display:block}
-.form__consent{display:flex;gap:10px;align-items:flex-start;font-size:12.8px;color:var(--muted);line-height:1.6;margin:6px 0 22px}
-.form__consent .ast{color:#C0392B}
-.form__consent input{width:auto;margin-top:3px;flex:none;accent-color:var(--navy-700)}
+
+/* embedded application form */
+.form--embed{padding:0;overflow:hidden;display:flex;flex-direction:column;background:#fff}
+.embed__bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#f8fafd)}
+.embed__label{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2)}
+.embed__open{display:inline-flex;align-items:center;gap:6px;font-size:12.8px;font-weight:700;color:var(--blue-600);white-space:nowrap;transition:opacity .2s}
+.embed__open svg{width:13px;height:13px}
+.embed__open:hover{opacity:.72}
+.embed__frame{position:relative;width:100%;height:2260px;background:#fff}
+.embed__frame iframe{display:block;width:100%;height:100%;border:0}
+.embed__fallback{padding:24px;font-size:14px;color:var(--muted-2)}
+.embed__fallback a{color:var(--blue-600);text-decoration:underline}
 .form__status{display:none;margin-top:18px;padding:14px 16px;border-radius:10px;font-size:14px;line-height:1.6}
 .form__status.is-ok{display:block;background:var(--green-100);border:1px solid rgba(74,158,81,.34);color:#2C6B32}
 .form__status.is-err{display:block;background:rgba(192,57,43,.07);border:1px solid rgba(192,57,43,.28);color:#A0301F}
@@ -760,6 +754,9 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
   .hero__lead{max-width:none}
   .split{grid-template-columns:minmax(0,1fr);gap:44px}
   .contact-grid{grid-template-columns:minmax(0,1fr);gap:44px}
+  .contact-info{position:static;top:auto}
+  .form--embed{max-width:760px;margin:0 auto;width:100%}
+  .embed__frame{height:2280px}
   .highlights__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hl:nth-child(2){border-right:0}
   .hl:nth-child(1),.hl:nth-child(2){border-bottom:1px solid rgba(255,255,255,.1)}
@@ -783,8 +780,13 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
   .grid--3,.grid--2{grid-template-columns:minmax(0,1fr)}
   .feature__body{padding:26px 22px}
   .checks{grid-template-columns:minmax(0,1fr)}
-  .form__row{grid-template-columns:minmax(0,1fr);gap:0}
   .form{padding:26px 20px}
+  .form--embed{padding:0;order:1}
+  .contact-info{order:2}
+  .embed__bar{padding:12px 16px;justify-content:flex-end}
+  .embed__label{display:none}
+  .embed__open{font-size:12px;gap:5px}
+  .embed__frame{height:2420px}
   .panel{padding:30px 24px}
   .card{padding:26px 22px}
   .process{grid-template-columns:minmax(0,1fr);gap:32px}
@@ -1393,76 +1395,32 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
           <span class="ci__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
           <div><b>Office hours</b><p>Monday – Friday, 08:00 – 17:00 EAT<br>Saturday, 09:00 – 13:00 EAT</p></div>
         </div>
+        <div class="ci">
+          <span class="ci__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0l-7.2-7.2a2 2 0 01-.6-1.4V4a1 1 0 011-1h8a2 2 0 011.4.6l7.4 7.4a2 2 0 010 2.4z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg></span>
+          <div><b>Referrer code</b><p>If an agent or a friend introduced you, they will give you a code such as NGP-AGT-001. Enter it in the form so the credit goes to them.</p></div>
+        </div>
       </div>
 
-      <form class="form reveal" id="enquiryForm" novalidate>
-        <div class="form__row">
-          <div class="field">
-            <label for="f-name">Full name <span class="ast">*</span></label>
-            <input type="text" id="f-name" name="name" placeholder="Your name" autocomplete="name" required>
-            <span class="field__err">Please enter your full name.</span>
-          </div>
-          <div class="field">
-            <label for="f-phone">Phone <span class="ast">*</span></label>
-            <input type="tel" id="f-phone" name="phone" placeholder="+254 7XX XXX XXX" autocomplete="tel" required>
-            <span class="field__err">Please enter a contact number.</span>
-          </div>
+      <div class="form form--embed reveal">
+        <div class="embed__bar">
+          <span class="embed__label">Instalment plan application</span>
+          <a class="embed__open" href="https://nsgrc4jmdfgg.sg.larksuite.com/share/base/shrlgYjLKE9sfxdXgcY0fSU2E3o" target="_blank" rel="noopener">
+            Open in a new tab
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>
+          </a>
         </div>
-
-        <div class="field">
-          <label for="f-email">Email</label>
-          <input type="email" id="f-email" name="email" placeholder="you@example.com" autocomplete="email">
-          <span class="field__err">Please enter a valid email address.</span>
+        <div class="embed__frame">
+          <iframe
+            src="https://nsgrc4jmdfgg.sg.larksuite.com/share/base/shrlgYjLKE9sfxdXgcY0fSU2E3o"
+            title="Ngaosun Power — instalment plan application form"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allow="clipboard-write"></iframe>
         </div>
-
-        <div class="form__row">
-          <div class="field">
-            <label for="f-asset">What are you interested in? <span class="ast">*</span></label>
-            <select id="f-asset" name="asset" required>
-              <option value="">Select an option</option>
-              <option>E-Motorbike (instalment plan)</option>
-              <option>Electric Vehicle (instalment plan)</option>
-              <option>Rooftop Solar (instalment plan)</option>
-              <option>Not sure yet — advise me</option>
-            </select>
-            <span class="field__err">Please choose what you are interested in.</span>
-          </div>
-          <div class="field">
-            <label for="f-profile">I am applying as <span class="ast">*</span></label>
-            <select id="f-profile" name="profile" required>
-              <option value="">Select an option</option>
-              <option>Boda Boda rider</option>
-              <option>Ride-hailing or taxi operator</option>
-              <option>Fleet or business owner</option>
-              <option>School, hospital, hotel or institution</option>
-              <option>Other</option>
-            </select>
-            <span class="field__err">Please tell us how you are applying.</span>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="f-ref">Who referred you to us?</label>
-          <input type="text" id="f-ref" name="referrer" placeholder="Name and contact person who referred you, if any.">
-        </div>
-
-        <div class="field">
-          <label for="f-msg">Anything else we should know?</label>
-          <textarea id="f-msg" name="message" placeholder="Where you are based, what you earn in a typical week, how you plan to use the asset — anything that helps us put a plan together."></textarea>
-        </div>
-
-        <label class="form__consent">
-          <input type="checkbox" id="f-consent" required>
-          <span>I consent to Ngaosun Power Limited processing the information above so it can respond to this enquiry. <span class="ast">*</span></span>
-        </label>
-
-        <button type="submit" class="btn btn--navy btn--block">
-          Submit application
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </button>
-
-        <div class="form__status" id="formStatus" role="status" aria-live="polite"></div>
-      </form>
+        <noscript>
+          <p class="embed__fallback">This form needs JavaScript. Please <a href="https://nsgrc4jmdfgg.sg.larksuite.com/share/base/shrlgYjLKE9sfxdXgcY0fSU2E3o">open the application form</a> or email <a href="mailto:ngaosun2026@gmail.com">ngaosun2026@gmail.com</a>.</p>
+        </noscript>
+      </div>
     </div>
   </div>
 </section>
@@ -1594,95 +1552,6 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
   window.addEventListener('resize', function () {
     var open = document.querySelector('.faq__item.is-open .faq__a');
     if (open) open.style.maxHeight = open.scrollHeight + 'px';
-  });
-
-  /* ---------- enquiry form ---------- */
-  var form = document.getElementById('enquiryForm');
-  var status = document.getElementById('formStatus');
-  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-  var showError = function (el, show) {
-    var field = el.closest('.field');
-    if (field) field.classList.toggle('has-error', show);
-  };
-  form.querySelectorAll('input, select, textarea').forEach(function (el) {
-    el.addEventListener('input', function () { showError(el, false); });
-    el.addEventListener('change', function () { showError(el, false); });
-  });
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var firstBad = null;
-
-    ['f-name', 'f-phone'].forEach(function (id) {
-      var el = document.getElementById(id);
-      var bad = !el.value.trim();
-      showError(el, bad);
-      if (bad && !firstBad) firstBad = el;
-    });
-
-    var email = document.getElementById('f-email');
-    if (email.value.trim() && !emailRe.test(email.value.trim())) {
-      showError(email, true);
-      if (!firstBad) firstBad = email;
-    } else {
-      showError(email, false);
-    }
-
-    ['f-asset', 'f-profile'].forEach(function (id) {
-      var el = document.getElementById(id);
-      var bad = !el.value;
-      showError(el, bad);
-      if (bad && !firstBad) firstBad = el;
-    });
-
-    if (!document.getElementById('f-consent').checked && !firstBad) {
-      firstBad = document.getElementById('f-consent');
-    }
-
-    if (firstBad) {
-      status.className = 'form__status is-err';
-      status.textContent = window.NGP_MSG ? window.NGP_MSG.invalid()
-        : 'Please complete the highlighted fields before submitting.';
-      if (firstBad.focus) firstBad.focus();
-      return;
-    }
-
-    var p = {
-      name: document.getElementById('f-name').value.trim(),
-      phone: document.getElementById('f-phone').value.trim(),
-      email: email.value.trim(),
-      asset: document.getElementById('f-asset').value,
-      profile: document.getElementById('f-profile').value,
-      referrer: document.getElementById('f-ref').value.trim(),
-      message: document.getElementById('f-msg').value.trim()
-    };
-
-    var body = [
-      'Instalment plan enquiry — Ngaosun Power Limited',
-      '',
-      'Name: ' + p.name,
-      'Phone: ' + p.phone,
-      'Email: ' + (p.email || '(not provided)'),
-      'Interested in: ' + p.asset,
-      'Applying as: ' + p.profile,
-      'Referred by: ' + (p.referrer || '(not provided)'),
-      '',
-      'Details:',
-      p.message || '(none provided)'
-    ].join('\n');
-
-    status.className = 'form__status is-ok';
-    var ref = 'NPL-' + Date.now().toString().slice(-6);
-    status.innerHTML = window.NGP_MSG ? window.NGP_MSG.success(p.name.split(' ')[0], ref) :
-      'Thank you, ' + p.name.split(' ')[0] + '. Your application has been prepared. ' +
-      'Opening your email client to send it to <strong>ngaosun2026@gmail.com</strong> — ' +
-      'if nothing opens, please email us directly and quote the reference below.<br>' +
-      '<span style="opacity:.75">Reference: ' + ref + '</span>';
-
-    window.location.href = 'mailto:ngaosun2026@gmail.com' +
-      '?subject=' + encodeURIComponent('Instalment plan enquiry — ' + p.name) +
-      '&body=' + encodeURIComponent(body);
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();
