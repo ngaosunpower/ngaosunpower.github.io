@@ -9,7 +9,7 @@
    - Anything cross-origin: passed straight through, never cached.
 */
 
-const VERSION = 'v20';
+const VERSION = 'v21';
 const CACHE = 'ngaosun-' + VERSION;
 
 /* Resolved relative to this file, so the worker keeps working whether the
