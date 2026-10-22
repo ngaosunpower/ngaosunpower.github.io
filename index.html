@@ -630,6 +630,12 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
    ============================================================ */
 .faq{max-width:880px;margin:0 auto}
 .faq__item{border-bottom:1px solid var(--line)}
+.faq__group{
+  margin:36px 0 4px;padding-bottom:12px;
+  font-size:11.4px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted-2);
+}
+.faq__group:first-child{margin-top:0}
 .faq__q{
   width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;
   padding:22px 4px;text-align:left;font-size:16.5px;font-weight:650;color:var(--text);transition:color .18s;
@@ -1055,6 +1061,7 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
         </div>
         <ul class="card__list">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Solar PV and battery storage, designed for your site</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Quotation based on six months of your KPLC statements</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Reduced electricity costs and grid dependence</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Predictable monthly instalments — no large upfront capital</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>End-to-end delivery and ongoing maintenance</li>
@@ -1345,13 +1352,55 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
         </div></div>
       </div>
 
+      <div class="faq__group">Solar on instalments — for institutions</div>
+
       <div class="faq__item">
         <button class="faq__q" aria-expanded="false">
-          <span>I run a business and want solar. How does that work?</span>
+          <span>Who is this solar plan for?</span>
           <span class="faq__icon" aria-hidden="true"></span>
         </button>
         <div class="faq__a"><div class="faq__a-inner">
-          <p>We carry out a site and consumption assessment, design the system, then finance, install and commission it. You pay monthly over the term of the agreement, and the system is titled to you once the plan is paid up. We remain responsible for maintenance during the term.</p>
+          <p>Priority is given to institutions — education facilities, health facilities, the hospitality industry, parishes and congregations, industries and firms. If your organisation carries a monthly electricity bill, the plan is built for you.</p>
+        </div></div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false">
+          <span>How does an institution know what the system will cost?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a"><div class="faq__a-inner">
+          <p>The institution provides a six-month KPLC statement. Once the statements reach us, our engineer analyses them and issues a quotation. We will send you a sample statement so you know exactly what to request from KPLC.</p>
+        </div></div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false">
+          <span>How do we know the system is of high quality and will not fail?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a"><div class="faq__a-inner">
+          <p>Ngaosun Power Limited takes responsibility for keeping the system up and running throughout the payment period. At handover, guarantees are offered as per the manufacturer of each solar component — the three major ones being panels, batteries and inverters.</p>
+        </div></div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false">
+          <span>How long does it take from signing to installation?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a"><div class="faq__a-inner">
+          <p>Once the institution pays the instalment, installation starts within five working days. The interval gives us room to mobilise the required resources and plan logistics to the site.</p>
+        </div></div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false">
+          <span>Why choose Ngaosun Power Limited?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a"><div class="faq__a-inner">
+          <p>We listen to our clients, and we tailor our solutions to answer each client's needs after understanding them. We train clients on the basics of maintaining the system, we monitor the system from our offices, and our call centre is active 24/7.</p>
         </div></div>
       </div>
     </div>
