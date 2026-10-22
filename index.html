@@ -516,6 +516,11 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
 .card__list li{display:flex;gap:10px;font-size:13.9px;color:var(--muted);line-height:1.55}
 .card__list li svg{width:15px;height:15px;flex:none;margin-top:4px;color:var(--green-500)}
 .card__foot{margin-top:auto;padding-top:22px}
+.card__link{
+  display:block;text-align:center;margin-top:13px;
+  font-size:12.8px;font-weight:650;color:var(--blue-600);
+}
+.card__link:hover{text-decoration:underline}
 .spec{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
 .spec span{font-size:11.5px;font-weight:650;color:var(--navy-700);background:var(--bg-alt);border:1px solid var(--line);padding:4px 9px;border-radius:6px}
 
@@ -569,6 +574,19 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
 .step h4{font-size:16px;margin-bottom:9px}
 .step p{font-size:13.8px;color:var(--muted);line-height:1.62;margin-bottom:14px}
 .step__time{display:inline-block;align-self:flex-start;margin-top:auto;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-600);background:var(--bg-deep);padding:4px 9px;border-radius:6px}
+
+/* solar: the ten-step institutional path — two columns of numbered rows */
+.ssteps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px;margin-top:6px}
+.sstep{display:flex;gap:15px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--line)}
+.sstep__n{
+  flex:none;min-width:30px;height:26px;display:grid;place-items:center;
+  font-size:11.5px;font-weight:750;letter-spacing:.06em;font-variant-numeric:tabular-nums;
+  color:var(--blue-600);background:#fff;border:1px solid var(--line);border-radius:7px;
+}
+.sstep h4{font-size:15.4px;margin-bottom:5px}
+.sstep p{font-size:13.8px;color:var(--muted);line-height:1.6;margin:0}
+.ssteps__foot{margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.ssteps__foot p{font-size:13.2px;color:var(--muted-2);line-height:1.65;max-width:780px}
 
 /* ============================================================
    9. SPLIT / PANEL
@@ -774,6 +792,7 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
   .case-divider{margin:46px 0}
   .solutions{grid-template-columns:minmax(0,1fr)}
   .card--feature{grid-template-columns:minmax(0,1fr)}
+  .ssteps{gap:0 36px}
   .feature__media{aspect-ratio:1100/888}
 }
 @media (max-width:680px){
@@ -796,6 +815,9 @@ h2.title{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
   .panel{padding:30px 24px}
   .card{padding:26px 22px}
   .process{grid-template-columns:minmax(0,1fr);gap:32px}
+  .ssteps{grid-template-columns:minmax(0,1fr);gap:0}
+  .sstep{padding:17px 0}
+  .ssteps__foot{margin-top:24px;padding-top:18px}
   .step,.step:first-child,.step:last-child,.step:nth-child(4){padding:0}
   .step__num,.step:first-child .step__num,.step:nth-child(4) .step__num{left:0}
   .hero-card{padding:22px 20px}
@@ -1072,6 +1094,7 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
             View the Spring Garden project
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
+          <a class="card__link" href="#solar-process">How a solar plan is put together — ten steps</a>
         </div>
       </article>
     </div>
@@ -1282,8 +1305,102 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
   </div>
 </section>
 
+<!-- ===================== SOLAR PROCESS (10 steps) ===================== -->
+<section class="section section--alt" id="solar-process">
+  <div class="wrap">
+    <div class="head-block reveal">
+      <span class="eyebrow">Solar on instalments</span>
+      <h2 class="title">From your KPLC bill to handover, in ten steps.</h2>
+      <p class="lead">
+        Every institutional solar project follows the same path. You will always know which step you
+        are on, and what we need from you next.
+      </p>
+    </div>
+
+    <div class="ssteps">
+      <div class="sstep reveal">
+        <span class="sstep__n">01</span>
+        <div>
+          <h4>Send your KPLC statements</h4>
+          <p>Send us your KPLC bills for the last six months. Ask us for a sample statement so you know exactly what to request at the KPLC office.</p>
+        </div>
+      </div>
+      <div class="sstep reveal">
+        <span class="sstep__n">02</span>
+        <div>
+          <h4>We analyse your consumption</h4>
+          <p>Our engineer studies the bills to establish two things: how much power your institution actually requires, and what you have been paying KPLC each month.</p>
+        </div>
+      </div>
+      <div class="sstep reveal">
+        <span class="sstep__n">03</span>
+        <div>
+          <h4>You receive a tentative quotation</h4>
+          <p>The engineer comes back to you with an indicative cost for a system sized to that consumption.</p>
+        </div>
+      </div>
+      <div class="sstep reveal">
+        <span class="sstep__n">04</span>
+        <div>
+          <h4>You request the agreement forms</h4>
+          <p>If you are happy to proceed, you ask for the agreement forms and we send them to you.</p>
+        </div>
+      </div>
+      <div class="sstep reveal">
+        <span class="sstep__n">05</span>
+        <div>
+          <h4>You fill in and return the forms</h4>
+          <p>Complete the forms and send them back to us. This is what starts the formal process.</p>
+        </div>
+      </div>
+      <div class="sstep reveal">
+        <span class="sstep__n">06</span>
+        <div>
+          <h4>Site verification and final quotation</h4>
+          <p>The engineer arranges a visit to your institution to verify the site. The final quotation is issued after that visit.</p>
+        </div>
+      </div>
+      <div class="sstep reveal">
+        <span class="sstep__n">07</span>
+        <div>
+          <h4>You pay the agreed down payment</h4>
+          <p>You pay the agreed down payment on the total installation cost. It counts as your institution's contribution to the project.</p>
+        </div>
+      </div>
+      <div class="sstep reveal">
+        <span class="sstep__n">08</span>
+        <div>
+          <h4>Installation and commissioning</h4>
+          <p>Installation begins. Once the work is complete, a commissioning ceremony is held with your team.</p>
+        </div>
+      </div>
+      <div class="sstep reveal">
+        <span class="sstep__n">09</span>
+        <div>
+          <h4>You start your monthly payments</h4>
+          <p>Your institution takes over the obligation of paying monthly, as set out in the agreement.</p>
+        </div>
+      </div>
+      <div class="sstep reveal">
+        <span class="sstep__n">10</span>
+        <div>
+          <h4>Handover on the final payment</h4>
+          <p>The last payment marks the handover of the system to your institution.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ssteps__foot reveal">
+      <p>
+        Step 1 asks for a sample statement. Request it the first time you contact us — we will send you
+        the format KPLC recognises, so the analysis is not held up.
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== FAQ ===================== -->
-<section class="section section--alt" id="faq">
+<section class="section" id="faq">
   <div class="wrap">
     <div class="head-block reveal" style="margin-left:auto;margin-right:auto;text-align:center">
       <span class="eyebrow" style="justify-content:center">FAQ</span>
